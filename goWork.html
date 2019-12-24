@@ -100,6 +100,12 @@ var vm = new Vue({
                     this.answerRight='不辞了'
                     this.goWhere=13
                     break;
+                    case 13:
+                    this.question='辞职了会后悔吗？'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=8
+                    break;
             }
         },
         answerRightBt:function(index){
