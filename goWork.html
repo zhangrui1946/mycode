@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <script type="text/javascript " src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+</head>
+<body style="background-color:#F7FAFD;">
+    <div id="all" class="h5body">
+        <div class="h5bodycenter">
+           {{question}}
+        </div>
+        <div class="h5bodycenter_btn" v-if="showorNo">
+            <div class="h5bodycenter_btn_left" v-on:click="answerLeftBt(goWhere)">{{answerLeft}}</div>
+            <div class="h5bodycenter_btn_right" v-on:click="answerRightBt(goWhere)">{{answerRight}}</div>
+        </div>
+      </div>
+</body>
+<script>
+var vm = new Vue({
+    el: "#all",
+    data: {
+            question:'该不该辞职呢？',
+            answerLeft:'立马辞职',
+            answerRight:'还没想好',
+            goWhere:1,
+            showorNo:true
+    },
+    methods: {
+        answerLeftBt:function(index){
+            switch(index){
+                case 1:
+                    this.question='你有钱来维持自己下半生？'
+                    this.answerLeft='有'
+                    this.answerRight='无'
+                    this.goWhere=2
+                    break;
+                case 2:
+                    this.question='你肯定？'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=3
+                    break;
+                    case 3:
+                    this.question='果断辞职！'
+                    this.showorNo=false;
+                    break;
+                    case 4:
+                    this.question='信得过？'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=5
+                    break;
+                    case 5:
+                    this.question='果断辞职！'
+                    this.showorNo=false;
+                    break;
+                    case 6:
+                    this.question='真的想辞？'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=7
+                    break;
+                    case 7:
+                    this.question='辞职了会后悔吗？'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=8
+                    break;
+                    case 8:
+                    this.question='在做几个月看看？'
+                    this.answerLeft='好吧'
+                    this.answerRight='决不'
+                    this.goWhere=9
+                    break;
+                    case 9:
+                    this.question='做得怎么样？'
+                    this.answerLeft='还好'
+                    this.answerRight='不好'
+                    this.goWhere=10
+                    break;
+                    case 10:
+                    this.question='那为什么要辞职？'
+                    this.answerLeft='工资不高，不开心？'
+                    this.answerRight='纯粹想走，追梦想'
+                    this.goWhere=11
+                    break;
+                    case 11:
+                    this.question='跟老板谈一下！'
+                    this.answerLeft='谈的还好'
+                    this.answerRight='不要提了'
+                    this.goWhere=12
+                    break;
+                    case 12:
+                    this.question='还要辞职吗？'
+                    this.answerLeft='辞'
+                    this.answerRight='不辞了'
+                    this.goWhere=13
+                    break;
+            }
+        },
+        answerRightBt:function(index){
+            switch(index){
+                case 1:
+                    this.question='滚回去上班去！'
+                    this.showorNo=false;
+                    break;
+                case 2:
+                    this.question='有没有人来养你的下半生'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=4
+                    break; 
+                    case 3:
+                    this.question='找到新工作了吗？'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=6
+                    break;
+                    case 4:
+                    this.question='找到新工作了吗？'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=6
+                    break;
+                    case 5:
+                    this.question='找到新工作了吗？'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=6
+                    break;
+                    case 6:
+                    this.question='那为什么要辞职？'
+                    this.answerLeft='工资不高，不开心？'
+                    this.answerRight='纯粹想走，追梦想'
+                    this.goWhere=11
+                    break;
+                    case 7:
+                    this.question='那为什么要辞职？'
+                    this.answerLeft='工资不高，不开心？'
+                    this.answerRight='纯粹想走，追梦想'
+                    this.goWhere=11
+                    break;
+                    case 8:
+                    this.question='果断辞职！'
+                    this.showorNo=false;
+                    break;
+                    case 9:
+                    this.question='果断辞职！'
+                    this.showorNo=false;
+                    break;
+                    case 10:
+                    this.question='还要辞职吗？'
+                    this.answerLeft='辞'
+                    this.answerRight='不辞了'
+                    this.goWhere=13
+                    break;
+                    case 11:
+                    this.question='果断辞职！'
+                    this.showorNo=false;
+                    break;
+                    case 12:
+                    this.question='找到新工作了吗？'
+                    this.answerLeft='YES'
+                    this.answerRight='NO'
+                    this.goWhere=6
+                    break;
+                    case 13:
+                    this.question='滚回去上班去！'
+                    this.showorNo=false;
+                    break;
+            }
+        }
+    },
+    created:function() {
+    },
+})
+</script>
+<style>
+    .h5body{
+  width: 60%;
+  height: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+  box-shadow: 0px 0px 10px 0px;
+}
+.h5bodycenter{
+  width: 80%;
+  height: 60%;
+  margin:  30px auto;
+  box-shadow: 0px 0px 10px 0px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 200px;
+}
+.h5bodycenter_btn{
+  width: 90%;
+  height: 20%;
+  margin:  30px auto;
+  /* box-shadow: 0px 0px 10px 0px; */
+}
+.h5bodycenter_btn_left{
+  width: 40%;
+  height: 90px;
+  float: left;
+  box-shadow: 0px 0px 10px 0px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 100px;
+  text-align: center;
+  cursor:pointer
+} 
+.h5bodycenter_btn_right{
+  width: 40%;
+  height: 90px;
+  float: right;
+  box-shadow: 0px 0px 10px 0px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 90px;
+  text-align: center;
+  cursor:pointer
+}
+
+</style>
+</html>
